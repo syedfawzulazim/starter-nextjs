@@ -1,0 +1,74 @@
+@import "../../../styles/variables";
+@import "../../../styles/mixins";
+
+.navbar {
+  background: #000;
+  height: 80px;
+  //   margin-top: -80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-style: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border: 1px solid salmon;
+
+  @include breakpoint-down(mobile) {
+    transition: 0.8 all ease;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    z-index: 1;
+    width: 100%;
+    padding: 0 24px;
+    max-width: 1100px;
+    border: 1px solid rgb(119, 162, 231);
+
+    &__logo {
+      cursor: pointer;
+      display: flex;
+      justify-self: flex-start;
+      align-items: center;
+      font-size: $font-lg;
+      margin-left: 24px;
+      font-weight: bold;
+      border: 1px solid rgb(16, 206, 57);
+    }
+    a {
+      color: rgb(255, 255, 255);
+    }
+
+    &__mobileIcons {
+      display: none;
+
+      @include breakpoint-down(mobile) {
+        display: block;
+        cursor: pointer;
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate((-100%, 60%));
+        font-size: 1.8rem;
+      }
+    }
+
+    &__menu {
+      ul {
+        display: flex;
+        align-items: center;
+        list-style: none;
+        text-align: center;
+        margin-right: -22px;
+        border: 2px solid rgb(206, 16, 105);
+
+        @include breakpoint-down(mobile) {
+          display: none;
+        }
+      }
+    }
+  }
+}
