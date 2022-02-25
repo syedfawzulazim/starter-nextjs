@@ -1,21 +1,32 @@
 import Link from "next/link";
+import Image from "next/image";
 import { FaBars } from "react-icons/fa";
 import NavItem from "./NavItem";
 import styles from "./styles/navbar.module.scss";
+import logo from "../../assets/images/logo.png";
+import { navItems } from "../../lib";
 
-const Navbar = () => {
-  const navItems = ["About", "Projects", "Contact"];
+type props = {
+  toggle: () => {};
+};
 
+const Navbar = ({ toggle }: props) => {
   return (
     <>
       <div className={styles.navbar}>
         <div className={styles.navbar__container}>
           <div className={styles.navbar__container__logo}>
             <Link href="/">
-              <a>Portfolio</a>
+              <a>
+                {" "}
+                <Image src={logo} alt="logo" />
+              </a>
             </Link>
           </div>
-          <div className={styles.navbar__container__mobileIcons}>
+          <div
+            onClick={() => toggle()}
+            className={styles.navbar__container__mobileIcons}
+          >
             <FaBars />
           </div>
           <div className={styles.navbar__container__menu}>

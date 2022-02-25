@@ -1,11 +1,11 @@
 import { Link as LinkS } from "react-scroll";
 import styles from "./styles/navItem.module.scss";
 
-type AppProps = {
+type Props = {
   item: string;
 };
 
-const NavItem = ({ item }: AppProps): JSX.Element => {
+const NavItem = ({ item }: Props): JSX.Element => {
   return (
     <>
       <li className={styles.navItem}>
