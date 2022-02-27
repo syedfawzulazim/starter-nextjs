@@ -6,11 +6,11 @@ import styles from "./styles/navbar.module.scss";
 import logo from "../../assets/images/logo.png";
 import { navItems } from "../../lib";
 
-type props = {
-  toggle: () => {};
-};
+interface Props {
+  toggle: () => void;
+}
 
-const Navbar = ({ toggle }: props) => {
+const Navbar = ({ toggle }: Props) => {
   return (
     <>
       <div className={styles.navbar}>

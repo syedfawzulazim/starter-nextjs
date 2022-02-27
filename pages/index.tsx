@@ -4,17 +4,17 @@ import Navbar from "../components/Navbar";
 import Sidebar from "../components/SIdebar";
 
 const Home: NextPage = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const toggle = () => {
     setIsOpen((prevState) => !prevState);
   };
+  console.log(isOpen);
 
   return (
     <div>
-      <div>{console.log(isOpen)}</div>
-      <Sidebar />
-      <Navbar toggle={() => toggle} />
+      <Sidebar isOpen={isOpen} toggle={toggle} />
+      <Navbar toggle={toggle} />
     </div>
   );
 };
