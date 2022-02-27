@@ -1,0 +1,42 @@
+@import "../../../styles/variables";
+@import "../../../styles/mixins";
+.sidebar {
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  background: #0d0d0d;
+  display: grid;
+  align-items: center;
+  top: -100%;
+  left: 0;
+  transition: 0.3 ease-in-out;
+
+  &__active {
+    top: 0;
+    opacity: 100%;
+  }
+
+  @include breakpoint-up(desktop) {
+    display: none;
+  }
+  .sidebar__icon {
+    color: aqua;
+    position: absolute;
+    top: 1.2rem;
+    right: 1.5rem;
+    font-size: 2rem;
+    background: transparent;
+    cursor: pointer;
+    outline: none;
+  }
+  .sidebar__wrapper__menu {
+    border: 1px solid rgb(232, 226, 233);
+    ul {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
